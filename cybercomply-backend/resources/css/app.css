@@ -1,0 +1,66 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/space-grotesk/500.css';
+@import '@fontsource/space-grotesk/700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: #1a1a25;
+    --bg-hover: #252535;
+    --text-primary: #f0f0f5;
+    --text-secondary: #a0a0b0;
+    --text-muted: #606070;
+    --border: #2a2a3a;
+    --border-focus: #00d4ff;
+}
+
+@layer base {
+    html, body, #app {
+        min-height: 100%;
+    }
+
+    body {
+        @apply bg-cyber-bg text-cyber-text font-sans;
+    }
+
+    h1, h2, h3, h4 {
+        @apply font-display tracking-tight;
+    }
+
+    code, pre {
+        @apply font-mono;
+    }
+}
+
+@layer components {
+    .cyber-card {
+        @apply bg-cyber-card border border-cyber-border rounded-xl shadow-sm;
+    }
+
+    .cyber-button-primary {
+        @apply inline-flex items-center justify-center rounded-lg bg-cyber-primary px-5 py-2.5 text-cyber-bg font-semibold transition-all;
+        @apply hover:shadow-cyber hover:scale-[1.01];
+    }
+
+    .cyber-button-secondary {
+        @apply inline-flex items-center justify-center rounded-lg border border-cyber-border px-5 py-2.5 text-cyber-muted transition-all;
+        @apply hover:border-cyber-primary hover:text-cyber-primary hover:bg-cyber-primary/10;
+    }
+
+    .cyber-input {
+        @apply w-full rounded-lg border border-cyber-border bg-cyber-secondary px-3 py-2 text-cyber-text;
+        @apply placeholder:text-cyber-soft focus:border-cyber-primary focus:ring-cyber-primary;
+    }
+
+    .cyber-badge {
+        @apply inline-flex items-center rounded-full px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider;
+    }
+}
